@@ -39,6 +39,8 @@ const ProductInfo = () => {
   const handleBuyNow = () => {
     if (selectedTreatment === '30-dias') {
       window.open('https://seguro.payt.com.br/a/P8zo0012i1k9qoyV', '_blank');
+    } else if (selectedTreatment === '90-dias') {
+      window.open('https://seguro.payt.com.br/a/2n1eDD0RhgBqxeKd', '_blank');
     } else {
       // For other treatments, you can add different links or keep default behavior
       console.log('Comprar agora - Tratamento:', selectedTreatment);
