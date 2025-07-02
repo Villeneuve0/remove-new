@@ -22,20 +22,16 @@ const Header = () => {
           <div className="flex flex-col">
             <div className="mb-1">
               <svg width="134" height="34" viewBox="0 0 134 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30.8 13.9c0-7.6-6.2-13.8-13.8-13.8S3.2 6.3 3.2 13.9s6.2 13.8 13.8 13.8 13.8-6.2 13.8-13.8zm-13.8 9.8c-5.4 0-9.8-4.4-9.8-9.8s4.4-9.8 9.8-9.8 9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8z" fill="#2D3277"/>
-                <path d="M17 6.1c-4.3 0-7.8 3.5-7.8 7.8s3.5 7.8 7.8 7.8 7.8-3.5 7.8-7.8-3.5-7.8-7.8-7.8zm0 11.6c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z" fill="#2D3277"/>
-                <g fill="#2D3277">
-                  <path d="M45.2 8.6h-3.8v11.8c0 2.1-1.7 3.8-3.8 3.8s-3.8-1.7-3.8-3.8V8.6h-3.8v11.8c0 4.2 3.4 7.6 7.6 7.6s7.6-3.4 7.6-7.6V8.6z"/>
-                  <path d="M58.4 8.6h-10.6v3.8h3.4v15.2h3.8V12.4h3.4V8.6z"/>
-                  <path d="M71.2 8.6h-10.6v3.8h3.4v15.2h3.8V12.4h3.4V8.6z"/>
-                  <path d="M84 8.6h-10.6v3.8h3.4v15.2h3.8V12.4H84V8.6z"/>
-                  <path d="M96.8 8.6H86.2v3.8h3.4v15.2h3.8V12.4h3.4V8.6z"/>
-                  <path d="M109.6 8.6H99v3.8h3.4v15.2h3.8V12.4h3.4V8.6z"/>
-                  <path d="M122.4 8.6h-10.6v3.8h3.4v15.2h3.8V12.4h3.4V8.6z"/>
-                  <path d="M134 20.4v-3.8h-7.6v3.8H134z"/>
-                </g>
-                <text x="40" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2D3277">mercado</text>
-                <text x="40" y="32" font-family="Arial, sans-serif" font-size="8" fill="#2D3277">livre</text>
+                {/* Handshake icon */}
+                <path d="M7.5 13.5c0-3.3 2.7-6 6-6s6 2.7 6 6v1.5h-2v-1.5c0-2.2-1.8-4-4-4s-4 1.8-4 4v1.5h-2v-1.5z" fill="#2D3277"/>
+                <path d="M20.5 13.5c0-3.3 2.7-6 6-6s6 2.7 6 6v1.5h-2v-1.5c0-2.2-1.8-4-4-4s-4 1.8-4 4v1.5h-2v-1.5z" fill="#2D3277"/>
+                <path d="M13.5 15h7v2h-7v-2z" fill="#2D3277"/>
+                <path d="M11 17h12v2H11v-2z" fill="#2D3277"/>
+                <path d="M9 19h16v2H9v-2z" fill="#2D3277"/>
+                
+                {/* Text */}
+                <text x="40" y="16" fontFamily="Arial, sans-serif" fontSize="14" fontWeight="normal" fill="#2D3277">mercado</text>
+                <text x="40" y="28" fontFamily="Arial, sans-serif" fontSize="14" fontWeight="normal" fill="#2D3277">livre</text>
               </svg>
             </div>
             <div className="flex items-center space-x-1 text-gray-700 text-xs">
