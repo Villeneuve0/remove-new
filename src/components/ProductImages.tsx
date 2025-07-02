@@ -5,10 +5,10 @@ const ProductImages = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "/api/placeholder/600/600?text=Pasta+Japonesa+Remove+Anti+Rugas+-+Frente",
-    "/api/placeholder/600/600?text=Pasta+Japonesa+Remove+Anti+Rugas+-+Verso",
-    "/api/placeholder/600/600?text=Pasta+Japonesa+Remove+Anti+Rugas+-+Lateral",
-    "/api/placeholder/600/600?text=Pasta+Japonesa+Remove+Anti+Rugas+-+Aplicacao"
+    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-V.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-T.webp"
   ];
 
   const nextImage = () => {
