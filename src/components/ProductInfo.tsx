@@ -36,6 +36,15 @@ const ProductInfo = () => {
 
   const currentTreatment = treatmentOptions.find(t => t.id === selectedTreatment) || treatmentOptions[0];
 
+  const handleBuyNow = () => {
+    if (selectedTreatment === '30-dias') {
+      window.open('https://seguro.payt.com.br/a/P8zo0012i1k9qoyV', '_blank');
+    } else {
+      // For other treatments, you can add different links or keep default behavior
+      console.log('Comprar agora - Tratamento:', selectedTreatment);
+    }
+  };
+
   return (
     <div className="space-y-4">
       {/* Condition and sold count */}
@@ -199,7 +208,10 @@ const ProductInfo = () => {
 
       {/* Action Buttons */}
       <div className="space-y-3 pt-4">
-        <button className="w-full bg-[#3483FA] text-white py-3 rounded font-medium hover:bg-[#2968C8] transition-colors">
+        <button 
+          onClick={handleBuyNow}
+          className="w-full bg-[#3483FA] text-white py-3 rounded font-medium hover:bg-[#2968C8] transition-colors"
+        >
           Comprar agora
         </button>
         <button className="w-full border border-[#3483FA] text-[#3483FA] py-3 rounded font-medium hover:bg-blue-50 transition-colors">
