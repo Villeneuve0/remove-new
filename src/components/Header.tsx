@@ -22,16 +22,21 @@ const Header = () => {
           <div className="flex flex-col">
             <div className="mb-1">
               <svg width="134" height="34" viewBox="0 0 134 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Handshake icon */}
-                <path d="M7.5 13.5c0-3.3 2.7-6 6-6s6 2.7 6 6v1.5h-2v-1.5c0-2.2-1.8-4-4-4s-4 1.8-4 4v1.5h-2v-1.5z" fill="#2D3277"/>
-                <path d="M20.5 13.5c0-3.3 2.7-6 6-6s6 2.7 6 6v1.5h-2v-1.5c0-2.2-1.8-4-4-4s-4 1.8-4 4v1.5h-2v-1.5z" fill="#2D3277"/>
-                <path d="M13.5 15h7v2h-7v-2z" fill="#2D3277"/>
-                <path d="M11 17h12v2H11v-2z" fill="#2D3277"/>
-                <path d="M9 19h16v2H9v-2z" fill="#2D3277"/>
-                
-                {/* Text */}
-                <text x="40" y="16" fontFamily="Arial, sans-serif" fontSize="14" fontWeight="normal" fill="#2D3277">mercado</text>
-                <text x="40" y="28" fontFamily="Arial, sans-serif" fontSize="14" fontWeight="normal" fill="#2D3277">livre</text>
+                {/* MercadoLivre official logo */}
+                <g>
+                  {/* Handshake symbol */}
+                  <path d="M7.2 8.4c-1.8 0-3.3 1.5-3.3 3.3v4.8c0 1.8 1.5 3.3 3.3 3.3h1.5v-2.4H7.2c-0.5 0-0.9-0.4-0.9-0.9v-4.8c0-0.5 0.4-0.9 0.9-0.9h1.5V8.4H7.2z" fill="#2D3277"/>
+                  <path d="M15.6 8.4v2.4h1.5c0.5 0 0.9 0.4 0.9 0.9v4.8c0 0.5-0.4 0.9-0.9 0.9h-1.5v2.4h1.5c1.8 0 3.3-1.5 3.3-3.3v-4.8c0-1.8-1.5-3.3-3.3-3.3h-1.5z" fill="#2D3277"/>
+                  <path d="M10.8 12.6h4.8v1.2h-4.8v-1.2z" fill="#2D3277"/>
+                  <path d="M9.6 14.4h7.2v1.2H9.6v-1.2z" fill="#2D3277"/>
+                  <path d="M8.4 16.2h9.6v1.2H8.4v-1.2z" fill="#2D3277"/>
+                  
+                  {/* Text "mercado" */}
+                  <text x="28" y="15" fontFamily="Proxima Nova, Arial, sans-serif" fontSize="11" fontWeight="400" fill="#2D3277">mercado</text>
+                  
+                  {/* Text "livre" */}
+                  <text x="28" y="26" fontFamily="Proxima Nova, Arial, sans-serif" fontSize="11" fontWeight="400" fill="#2D3277">livre</text>
+                </g>
               </svg>
             </div>
             <div className="flex items-center space-x-1 text-gray-700 text-xs">
