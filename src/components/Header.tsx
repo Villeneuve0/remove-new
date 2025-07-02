@@ -36,47 +36,20 @@ const Header = () => {
                 >
                   {/* Mobile optimized logo */}
                   <div className="block sm:hidden">
-                    <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8.5 4.5C6.01 4.5 4 6.51 4 9v14c0 2.49 2.01 4.5 4.5 4.5h23c2.49 0 4.5-2.01 4.5-4.5V9c0-2.49-2.01-4.5-4.5-4.5h-23z" fill="#2D3277"/>
-                      <path d="M20 8.5c-6.35 0-11.5 5.15-11.5 11.5S13.65 31.5 20 31.5 31.5 26.35 31.5 20 26.35 8.5 20 8.5zm0 20.5c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z" fill="#FFE600"/>
-                      <path d="M20 12c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 9.5h-3v3h-1v-3h-3v-1h3v-3h1v3h3v1z" fill="#2D3277"/>
-                    </svg>
+                    <img 
+                      src="/image-removebg-preview (1).png" 
+                      alt="MercadoLivre" 
+                      className="h-8 w-auto"
+                    />
                   </div>
                   
                   {/* Desktop logo */}
                   <div className="hidden sm:block">
-                    <svg width="134" height="34" viewBox="0 0 134 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Official MercadoLivre logo */}
-                      <g>
-                        {/* Main logo background */}
-                        <rect width="134" height="34" rx="4" fill="transparent"/>
-                        
-                        {/* Handshake/Connection symbol */}
-                        <path d="M8 6h4v4H8V6zm6 0h4v4h-4V6z" fill="#2D3277"/>
-                        <path d="M8 12h10v2H8v-2z" fill="#2D3277"/>
-                        <path d="M6 14h14v2H6v-2z" fill="#2D3277"/>
-                        <path d="M4 16h18v2H4v-2z" fill="#2D3277"/>
-                        <path d="M6 18h14v2H6v-2z" fill="#2D3277"/>
-                        <path d="M8 20h10v2H8v-2z" fill="#2D3277"/>
-                        <path d="M10 22h6v2h-6v-2z" fill="#2D3277"/>
-                        
-                        {/* "mercado" text */}
-                        <g fill="#2D3277">
-                          <text x="28" y="14" fontFamily="Proxima Nova, Arial, sans-serif" fontSize="10" fontWeight="600">mercado</text>
-                        </g>
-                        
-                        {/* "livre" text */}
-                        <g fill="#2D3277">
-                          <text x="28" y="24" fontFamily="Proxima Nova, Arial, sans-serif" fontSize="10" fontWeight="400">livre</text>
-                        </g>
-                        
-                        {/* Alternative text-based approach for better compatibility */}
-                        <g transform="translate(28, 8)">
-                          <text y="8" fill="#2D3277" fontSize="11" fontWeight="600" fontFamily="Arial, sans-serif">mercado</text>
-                          <text y="20" fill="#2D3277" fontSize="11" fontWeight="400" fontFamily="Arial, sans-serif">livre</text>
-                        </g>
-                      </g>
-                    </svg>
+                    <img 
+                      src="/image-removebg-preview (1).png" 
+                      alt="MercadoLivre" 
+                      className="h-10 w-auto"
+                    />
                   </div>
                 </a>
               </div>
