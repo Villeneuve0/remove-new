@@ -5,10 +5,10 @@ const ProductImages = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-F.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-V.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-O.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_647238-MLB74281516421_022024-T.webp"
+    "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/5217849/pexels-photo-5217849.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=600"
   ];
 
   const nextImage = () => {
