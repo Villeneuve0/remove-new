@@ -186,7 +186,7 @@ const ProductInfo = () => {
           <div className="text-lg font-bold">
             em 12x R$ {currentTreatment.installment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
           </div>
-          <div className="text-sm opacity-90">sem juros no cartão</div>
+          <div className="text-sm opacity-90">no cartão de crédito</div>
         </div>
         <div className="text-sm text-gray-600 mt-2">
           Ver os meios de pagamento
