@@ -5,10 +5,10 @@ const ProductImages = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "https://images.pexels.com/photos/5217849/pexels-photo-5217849.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=600"
+    "/Feliz aniversário floral feminino post do instagram (3).png",
+    "/Tan Ivory Beautiful Mature Woman Photo Skin Care Ad Facebook Post.png",
+    "/Instagram Post Antes e Depois Moderno Rosa e Bege.png",
+    "/Post Instagram Benefícios do Sérum Roxo e Lilás .png"
   ];
 
   const nextImage = () => {
