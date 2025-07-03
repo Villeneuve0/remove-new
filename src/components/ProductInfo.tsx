@@ -140,7 +140,8 @@ const ProductInfo = () => {
                   <div>
                     <div className="font-medium text-gray-900">{option.label}</div>
                     <div className="text-sm text-gray-600">{option.description}</div>
-                    <div className="text-xs text-[#3483FA] font-medium">
+                    {/* Highlighted installment value */}
+                    <div className="bg-gradient-to-r from-[#3483FA] to-[#2968C8] text-white px-3 py-1 rounded-full text-sm font-bold mt-1 inline-block shadow-md">
                       12x R$ {option.installment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                     </div>
                   </div>
@@ -180,10 +181,14 @@ const ProductInfo = () => {
         <div className="text-3xl font-light text-gray-900">
           R$ {currentTreatment.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
         </div>
-        <div className="text-green-600 text-sm font-medium">
-          em 12x R$ {currentTreatment.installment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} sem juros
+        {/* Enhanced installment display in main price section */}
+        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg inline-block shadow-lg">
+          <div className="text-lg font-bold">
+            em 12x R$ {currentTreatment.installment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+          </div>
+          <div className="text-sm opacity-90">sem juros no cartão</div>
         </div>
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-gray-600 mt-2">
           Ver os meios de pagamento
         </div>
       </div>
