@@ -31,6 +31,15 @@ const ProductInfo = () => {
       description: '5 unidades',
       discount: 43,
       bestValue: true
+    },
+    { 
+      id: '12-meses', 
+      label: 'Tratamento 12 meses', 
+      price: 697.00, 
+      originalPrice: 1197.00,
+      description: '12 unidades',
+      discount: 42,
+      choicePlus: true
     }
   ];
 
@@ -43,6 +52,8 @@ const ProductInfo = () => {
       window.open('https://seguro.payt.com.br/a/2n1eDD0RhgBqxeKd', '_blank');
     } else if (selectedTreatment === '150-dias') {
       window.open('https://seguro.payt.com.br/a/r93vqNPksRMpxoYg', '_blank');
+    } else if (selectedTreatment === '12-meses') {
+      window.open('https://seguro.payt.com.br/a/4Lvbjqa1T7bw4vzV', '_blank');
     }
   };
 
@@ -94,7 +105,7 @@ const ProductInfo = () => {
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
-              {/* Popular/Best Value badges */}
+              {/* Popular/Best Value/Choice Plus badges */}
               {option.popular && (
                 <div className="absolute -top-2 left-4 bg-orange-500 text-white px-2 py-1 rounded text-xs font-medium">
                   MAIS POPULAR
@@ -103,6 +114,11 @@ const ProductInfo = () => {
               {option.bestValue && (
                 <div className="absolute -top-2 left-4 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">
                   MELHOR VALOR
+                </div>
+              )}
+              {option.choicePlus && (
+                <div className="absolute -top-2 left-4 bg-purple-600 text-white px-2 py-1 rounded text-xs font-medium">
+                  ESCOLHA MAIS
                 </div>
               )}
 
@@ -135,7 +151,7 @@ const ProductInfo = () => {
                     R$ {option.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                   </div>
                   <div className="text-xs text-gray-600">
-                    R$ {(option.price / option.description.split(' ')[0]).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} cada
+                    R$ {(option.price / parseInt(option.description.split(' ')[0])).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} cada
                   </div>
                 </div>
               </div>
