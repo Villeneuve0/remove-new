@@ -12,7 +12,8 @@ const ProductInfo = () => {
       price: 197.00, 
       originalPrice: 299.00,
       description: '1 unidade',
-      discount: 34
+      discount: 34,
+      installment: 19.78
     },
     { 
       id: '90-dias', 
@@ -21,7 +22,8 @@ const ProductInfo = () => {
       originalPrice: 497.00,
       description: '3 unidades',
       discount: 40,
-      popular: true
+      popular: true,
+      installment: 29.82
     },
     { 
       id: '150-dias', 
@@ -30,7 +32,8 @@ const ProductInfo = () => {
       originalPrice: 697.00,
       description: '5 unidades',
       discount: 43,
-      bestValue: true
+      bestValue: true,
+      installment: 39.86
     },
     { 
       id: '12-meses', 
@@ -39,7 +42,8 @@ const ProductInfo = () => {
       originalPrice: 1197.00,
       description: '12 unidades',
       discount: 42,
-      choicePlus: true
+      choicePlus: true,
+      installment: 58.08
     }
   ];
 
@@ -136,6 +140,9 @@ const ProductInfo = () => {
                   <div>
                     <div className="font-medium text-gray-900">{option.label}</div>
                     <div className="text-sm text-gray-600">{option.description}</div>
+                    <div className="text-xs text-[#3483FA] font-medium">
+                      12x R$ {option.installment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    </div>
                   </div>
                 </div>
                 <div className="text-right">
@@ -174,7 +181,7 @@ const ProductInfo = () => {
           R$ {currentTreatment.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
         </div>
         <div className="text-green-600 text-sm font-medium">
-          em 12x R$ {(currentTreatment.price / 12).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} sem juros
+          em 12x R$ {currentTreatment.installment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} sem juros
         </div>
         <div className="text-sm text-gray-600">
           Ver os meios de pagamento
