@@ -1,11 +1,100 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, ShoppingCart, MapPin, User, Menu, X, Bell, Heart } from 'lucide-react';
 import LocationModal from './LocationModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
-  const [currentLocation, setCurrentLocation] = useState('São Paulo 01310-100');
+  const [currentLocation, setCurrentLocation] = useState('Detectando localização...');
+  const [isDetectingLocation, setIsDetectingLocation] = useState(true);
+
+  // Function to get location by IP
+  const getLocationByIP = async () => {
+    try {
+      const response = await fetch('https://ipapi.co/json/');
+      const data = await response.json();
+      if (data.city && data.postal) {
+        return `${data.city} ${data.postal}`;
+      } else if (data.city) {
+        return data.city;
+      }
+      return null;
+    } catch (error) {
+      console.error('Error getting location by IP:', error);
+      return null;
+    }
+  };
+
+  // Function to get location by geolocation API
+  const getLocationByGeolocation = () => {
+    return new Promise((resolve) => {
+      if (!navigator.geolocation) {
+        resolve(null);
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          try {
+            const { latitude, longitude } = position.coords;
+            const response = await fetch(
+              `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=pt`
+            );
+            const data = await response.json();
+            
+            if (data.city && data.postcode) {
+              resolve(`${data.city} ${data.postcode}`);
+            } else if (data.city) {
+              resolve(data.city);
+            } else if (data.locality) {
+              resolve(data.locality);
+            } else {
+              resolve(null);
+            }
+          } catch (error) {
+            console.error('Error with reverse geocoding:', error);
+            resolve(null);
+          }
+        },
+        (error) => {
+          console.error('Geolocation error:', error);
+          resolve(null);
+        },
+        {
+          timeout: 10000,
+          enableHighAccuracy: false,
+          maximumAge: 300000 // 5 minutes
+        }
+      );
+    });
+  };
+
+  // Detect user location on component mount
+  useEffect(() => {
+    const detectLocation = async () => {
+      setIsDetectingLocation(true);
+      
+      // Try geolocation first (more accurate)
+      const geoLocation = await getLocationByGeolocation();
+      if (geoLocation) {
+        setCurrentLocation(geoLocation);
+        setIsDetectingLocation(false);
+        return;
+      }
+
+      // Fallback to IP-based location
+      const ipLocation = await getLocationByIP();
+      if (ipLocation) {
+        setCurrentLocation(ipLocation);
+      } else {
+        setCurrentLocation('São Paulo 01310-100'); // Default fallback
+      }
+      
+      setIsDetectingLocation(false);
+    };
+
+    detectLocation();
+  }, []);
 
   const handleLocationSet = (location: string) => {
     setCurrentLocation(location);
@@ -57,7 +146,10 @@ const Header = () => {
                 <MapPin className="w-3 h-3" />
                 <button 
                   onClick={() => setIsLocationModalOpen(true)}
-                  className="hover:text-[#3483FA] hover:underline cursor-pointer truncate max-w-[120px] sm:max-w-none"
+                  className={`hover:text-[#3483FA] hover:underline cursor-pointer truncate max-w-[120px] sm:max-w-none ${
+                    isDetectingLocation ? 'animate-pulse' : ''
+                  }`}
+                  disabled={isDetectingLocation}
                 >
                   <span className="hidden sm:inline">Enviar para </span>
                   <span className="sm:hidden">Para </span>
@@ -112,7 +204,7 @@ const Header = () => {
               <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Histórico</a>
               <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Supermercado</a>
               <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Moda</a>
-              <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Casa e Jardim</a>
+              <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Beleza e Cuidado Pessoal</a>
               <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Eletrônicos</a>
               <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Esportes</a>
             </div>
