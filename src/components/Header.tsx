@@ -13,9 +13,7 @@ const Header = () => {
     try {
       const response = await fetch('https://ipapi.co/json/');
       const data = await response.json();
-      if (data.city && data.postal) {
-        return `${data.city} ${data.postal}`;
-      } else if (data.city) {
+      if (data.city) {
         return data.city;
       }
       return null;
@@ -42,9 +40,7 @@ const Header = () => {
             );
             const data = await response.json();
             
-            if (data.city && data.postcode) {
-              resolve(`${data.city} ${data.postcode}`);
-            } else if (data.city) {
+            if (data.city) {
               resolve(data.city);
             } else if (data.locality) {
               resolve(data.locality);
@@ -87,7 +83,7 @@ const Header = () => {
       if (ipLocation) {
         setCurrentLocation(ipLocation);
       } else {
-        setCurrentLocation('São Paulo 01310-100'); // Default fallback
+        setCurrentLocation('São Paulo'); // Default fallback without postal code
       }
       
       setIsDetectingLocation(false);
