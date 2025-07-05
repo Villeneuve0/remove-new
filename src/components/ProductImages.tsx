@@ -5,10 +5,10 @@ const ProductImages = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "/Feliz aniversário floral feminino post do instagram (3).png",
-    "/Tan Ivory Beautiful Mature Woman Photo Skin Care Ad Facebook Post.png",
-    "/Instagram Post Antes e Depois Moderno Rosa e Bege.png",
-    "/Post Instagram Benefícios do Sérum Roxo e Lilás .png"
+    "/imagens/produto-1.png",
+    "/imagens/produto-2.png",
+    "/imagens/produto-3.png",
+    "/imagens/produto-4.png"
   ];
 
   const nextImage = () => {

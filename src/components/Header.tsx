@@ -122,7 +122,7 @@ const Header = () => {
                   {/* Mobile optimized logo */}
                   <div className="block sm:hidden">
                     <img 
-                      src="/image-removebg-preview (1).png" 
+                      src="/imagens/logo-mercadolivre.png" 
                       alt="MercadoLivre" 
                       className="h-8 w-auto"
                     />
@@ -131,7 +131,7 @@ const Header = () => {
                   {/* Desktop logo */}
                   <div className="hidden sm:block">
                     <img 
-                      src="/image-removebg-preview (1).png" 
+                      src="/imagens/logo-mercadolivre.png" 
                       alt="MercadoLivre" 
                       className="h-10 w-auto"
                     />
