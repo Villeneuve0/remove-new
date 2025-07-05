@@ -28,6 +28,7 @@ body {
     display: flex;
     justify-content: flex-end;
     padding: 0.5rem 0;
+    background-color: #FFF159;
 }
 
 .top-links {
@@ -53,6 +54,7 @@ body {
     justify-content: space-between;
     padding: 0.75rem 0;
     gap: 1rem;
+    background-color: #FFF159;
 }
 
 .logo-section {
@@ -121,6 +123,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 2px;
     font-size: 0.875rem;
+    background-color: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -248,6 +251,7 @@ body {
 /* Main Content */
 .main-content {
     padding: 1.5rem 0;
+    background-color: #f5f5f5;
 }
 
 .product-section {
@@ -357,7 +361,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: border-color 0.2s;
-    background: none;
+    background: white;
     padding: 0;
 }
 
@@ -401,6 +405,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
 }
 
 .product-meta {
@@ -480,6 +488,7 @@ body {
     padding: 1rem;
     cursor: pointer;
     transition: all 0.2s;
+    background-color: white;
 }
 
 .treatment-option:hover {
@@ -748,11 +757,12 @@ body {
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: white;
 }
 
 .qty-btn {
     padding: 0.5rem;
-    background: none;
+    background: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -771,6 +781,7 @@ body {
     font-weight: 500;
     min-width: 3rem;
     text-align: center;
+    background-color: white;
 }
 
 .stock-available {
@@ -971,6 +982,7 @@ body {
     border-top: 1px solid #e5e5e5;
     padding: 2rem 0;
     text-align: center;
+    background-color: white;
 }
 
 .footer-bottom p {
@@ -1052,6 +1064,7 @@ body {
     border-radius: 8px;
     font-size: 1.125rem;
     text-align: center;
+    background-color: white;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
