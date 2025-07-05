@@ -1,14 +1,849 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MercadoLivre - Milhões de produtos com frete grátis</title>
-    <meta name="description" content="Encontre tudo o que você precisa no MercadoLivre. Milhões de produtos com frete grátis, entrega rápida e os melhores preços." />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <meta name="description" content="Encontre tudo o que você precisa no MercadoLivre. Milhões de produtos com frete grátis, entrega rápida e os melhores preços.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <!-- Top bar -->
+            <div class="top-bar">
+                <div class="top-links">
+                    <a href="#" class="top-link">Vender</a>
+                    <a href="#" class="top-link">Ajuda</a>
+                    <a href="#" class="top-link">Contato</a>
+                </div>
+            </div>
+
+            <!-- Main header -->
+            <div class="main-header">
+                <!-- Logo and Location -->
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <a href="//www.mercadolivre.com.br" class="nav-logo" title="Mercado Livre Brasil - Onde comprar e vender de Tudo">
+                            <img src="imagens/logo-mercadolivre.png" alt="MercadoLivre" class="logo">
+                        </a>
+                    </div>
+                    <div class="location-info">
+                        <svg class="location-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <button id="location-btn" class="location-btn">
+                            <span class="location-prefix">Enviar para </span>
+                            <span id="current-location">Detectando localização...</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search bar -->
+                <div class="search-container">
+                    <div class="search-wrapper">
+                        <input type="text" placeholder="Buscar produtos, marcas e muito mais..." class="search-input">
+                        <button class="search-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User actions -->
+                <div class="user-actions">
+                    <div class="action-item offers-link">
+                        <span>Ofertas do dia</span>
+                    </div>
+                    <div class="action-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="action-text">Entre</span>
+                    </div>
+                    <div class="action-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="action-text">Favoritos</span>
+                    </div>
+                    <div class="action-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 22C6.49 22 4.5 19.51 4.5 16.5C4.5 13.49 6.49 11 9 11C11.51 11 13.5 13.49 13.5 16.5C13.5 19.51 11.51 22 9 22Z"></path>
+                            <path d="M20 8v6h-2V8"></path>
+                            <path d="M15 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v3.5"></path>
+                            <path d="M2 16h2.76a2 2 0 0 0 1.79-1.11L12 2h2l2.24 12.89A2 2 0 0 0 18.24 16H21"></path>
+                        </svg>
+                        <span class="action-text">Carrinho</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories bar -->
+        <div class="categories-bar">
+            <div class="container">
+                <div class="categories-list">
+                    <a href="#" class="category-link">Categorias</a>
+                    <a href="#" class="category-link">Ofertas</a>
+                    <a href="#" class="category-link">Histórico</a>
+                    <a href="#" class="category-link">Supermercado</a>
+                    <a href="#" class="category-link">Moda</a>
+                    <a href="#" class="category-link">Beleza e Cuidado Pessoal</a>
+                    <a href="#" class="category-link">Eletrônicos</a>
+                    <a href="#" class="category-link">Esportes</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link">Saúde e Beleza</a>
+                </li>
+                <li class="breadcrumb-separator">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link">Cuidados com a Pele</a>
+                </li>
+                <li class="breadcrumb-separator">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link">Anti-idade</a>
+                </li>
+                <li class="breadcrumb-separator">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumb-item breadcrumb-current">
+                    <span>Pasta japonesa remove anti rugas pele macia rejuvenecida</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Product Section -->
+            <div class="product-section">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <div class="main-image-wrapper">
+                            <img id="main-image" src="imagens/produto-1.png" alt="Pasta japonesa remove anti rugas" class="main-image">
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button id="prev-btn" class="nav-arrow nav-arrow-left">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button id="next-btn" class="nav-arrow nav-arrow-right">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+
+                        <!-- Zoom button -->
+                        <button class="zoom-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                                <line x1="11" y1="8" x2="11" y2="14"></line>
+                                <line x1="8" y1="11" x2="14" y2="11"></line>
+                            </svg>
+                        </button>
+
+                        <!-- Image Counter -->
+                        <div id="image-counter" class="image-counter">1/4</div>
+                    </div>
+
+                    <!-- Thumbnail Images -->
+                    <div class="thumbnails">
+                        <button class="thumbnail active" data-image="imagens/produto-1.png" data-index="0">
+                            <img src="imagens/produto-1.png" alt="Imagem 1">
+                        </button>
+                        <button class="thumbnail" data-image="imagens/produto-2.png" data-index="1">
+                            <img src="imagens/produto-2.png" alt="Imagem 2">
+                        </button>
+                        <button class="thumbnail" data-image="imagens/produto-3.png" data-index="2">
+                            <img src="imagens/produto-3.png" alt="Imagem 3">
+                        </button>
+                        <button class="thumbnail" data-image="imagens/produto-4.png" data-index="3">
+                            <img src="imagens/produto-4.png" alt="Imagem 4">
+                        </button>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="image-actions">
+                        <button class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span>Adicionar aos favoritos</span>
+                        </button>
+                        <button class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                <polyline points="16,6 12,2 8,6"></polyline>
+                                <line x1="12" y1="2" x2="12" y2="15"></line>
+                            </svg>
+                            <span>Compartilhar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <!-- Condition and sold count -->
+                    <div class="product-meta">
+                        <span>Novo</span>
+                        <span>|</span>
+                        <span>+1000 vendidos</span>
+                    </div>
+
+                    <!-- Product Title -->
+                    <h1 class="product-title">
+                        Pasta japonesa remove anti rugas pele macia rejuvenecida
+                    </h1>
+
+                    <!-- Rating -->
+                    <div class="rating-section">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="rating-value">4.5</span>
+                        <a href="#" class="reviews-link">(2847 opiniões)</a>
+                    </div>
+
+                    <!-- Treatment Options -->
+                    <div class="treatment-options">
+                        <h3 class="options-title">Escolha seu tratamento:</h3>
+                        <div class="options-list">
+                            <div class="treatment-option active" data-treatment="30-dias">
+                                <div class="option-badge popular">MAIS POPULAR</div>
+                                <div class="option-content">
+                                    <div class="option-radio">
+                                        <div class="radio-dot"></div>
+                                    </div>
+                                    <div class="option-details">
+                                        <div class="option-name">Tratamento 30 dias</div>
+                                        <div class="option-description">1 unidade</div>
+                                        <div class="installment-highlight">
+                                            12x R$ 19,78
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option-pricing">
+                                    <div class="price-row">
+                                        <span class="original-price">R$ 299,00</span>
+                                        <span class="discount-badge">34% OFF</span>
+                                    </div>
+                                    <div class="current-price">R$ 197,00</div>
+                                    <div class="unit-price">R$ 197,00 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="treatment-option" data-treatment="90-dias">
+                                <div class="option-badge best-value">MELHOR VALOR</div>
+                                <div class="option-content">
+                                    <div class="option-radio">
+                                        <div class="radio-dot"></div>
+                                    </div>
+                                    <div class="option-details">
+                                        <div class="option-name">Tratamento 90 dias</div>
+                                        <div class="option-description">3 unidades</div>
+                                        <div class="installment-highlight">
+                                            12x R$ 29,82
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option-pricing">
+                                    <div class="price-row">
+                                        <span class="original-price">R$ 497,00</span>
+                                        <span class="discount-badge">40% OFF</span>
+                                    </div>
+                                    <div class="current-price">R$ 297,00</div>
+                                    <div class="unit-price">R$ 99,00 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="treatment-option" data-treatment="150-dias">
+                                <div class="option-badge choice-plus">ESCOLHA MAIS</div>
+                                <div class="option-content">
+                                    <div class="option-radio">
+                                        <div class="radio-dot"></div>
+                                    </div>
+                                    <div class="option-details">
+                                        <div class="option-name">Tratamento 150 dias</div>
+                                        <div class="option-description">5 unidades</div>
+                                        <div class="installment-highlight">
+                                            12x R$ 39,86
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option-pricing">
+                                    <div class="price-row">
+                                        <span class="original-price">R$ 697,00</span>
+                                        <span class="discount-badge">43% OFF</span>
+                                    </div>
+                                    <div class="current-price">R$ 397,00</div>
+                                    <div class="unit-price">R$ 79,40 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="treatment-option" data-treatment="12-meses">
+                                <div class="option-content">
+                                    <div class="option-radio">
+                                        <div class="radio-dot"></div>
+                                    </div>
+                                    <div class="option-details">
+                                        <div class="option-name">Tratamento 12 meses</div>
+                                        <div class="option-description">12 unidades</div>
+                                        <div class="installment-highlight">
+                                            12x R$ 58,08
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="option-pricing">
+                                    <div class="price-row">
+                                        <span class="original-price">R$ 1.197,00</span>
+                                        <span class="discount-badge">42% OFF</span>
+                                    </div>
+                                    <div class="current-price">R$ 697,00</div>
+                                    <div class="unit-price">R$ 58,08 cada</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Section -->
+                    <div class="price-section">
+                        <div class="price-header">
+                            <span id="original-price" class="original-price-main">R$ 299,00</span>
+                            <span id="discount-badge" class="discount-badge-main">34% OFF</span>
+                        </div>
+                        <div id="current-price-main" class="current-price-main">R$ 197,00</div>
+                        <div class="installment-main">
+                            <div id="installment-value" class="installment-value">
+                                em 12x R$ 19,78
+                            </div>
+                            <div class="installment-description">no cartão de crédito</div>
+                        </div>
+                        <div class="payment-methods">
+                            Ver os meios de pagamento
+                        </div>
+                    </div>
+
+                    <!-- Shipping -->
+                    <div class="shipping-section">
+                        <div class="shipping-info">
+                            <svg class="shipping-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            <div class="shipping-details">
+                                <div id="free-delivery" class="free-delivery">
+                                    Chegará grátis entre 7/jan e 8/jan
+                                </div>
+                                <div id="fast-delivery" class="fast-delivery">
+                                    Chegará entre 3/jan e 4/jan
+                                </div>
+                                <div class="more-delivery">
+                                    Mais formas de entrega
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stock and quantity -->
+                    <div class="stock-section">
+                        <div class="stock-info">Estoque disponível</div>
+                        <div class="quantity-controls">
+                            <span class="quantity-label">Quantidade:</span>
+                            <div class="quantity-selector">
+                                <button id="decrease-qty" class="qty-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <span id="quantity" class="quantity-value">1</span>
+                                <button id="increase-qty" class="qty-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="stock-available">(50 disponíveis)</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="buy-now-btn" class="btn-primary">Comprar agora</button>
+                        <button class="btn-secondary">Adicionar ao carrinho</button>
+                    </div>
+
+                    <!-- Seller Info -->
+                    <div class="seller-section">
+                        <div class="seller-label">Vendido por</div>
+                        <div class="seller-info">
+                            <div class="seller-details">
+                                <div class="seller-name">Cosméticos Exclusivos</div>
+                                <div class="seller-rating">
+                                    <div class="stars">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <span class="rating-count">5.0 (1234)</span>
+                                </div>
+                            </div>
+                            <div class="seller-badge">
+                                <div class="mercado-lider">MercadoLíder</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guarantees -->
+                    <div class="guarantees-section">
+                        <div class="guarantee-item">
+                            <svg class="guarantee-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span>Compra Garantida, receba o produto que está esperando ou devolvemos o dinheiro.</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <svg class="guarantee-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+                            </svg>
+                            <span>Garantia do vendedor: 30 dias</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Tabs -->
+            <div class="product-details">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Descrição</button>
+                    <button class="tab-btn" data-tab="specifications">Características</button>
+                    <button class="tab-btn" data-tab="reviews">Opiniões sobre o produto</button>
+                    <button class="tab-btn" data-tab="questions">Perguntas e respostas</button>
+                </div>
+
+                <div class="tabs-content">
+                    <div id="description" class="tab-content active">
+                        <h3>Descrição</h3>
+                        <div class="description-content">
+                            <p>A <strong>Pasta Japonesa Remove Anti Rugas</strong> é um produto revolucionário desenvolvido com tecnologia japonesa avançada para combater os sinais do envelhecimento e proporcionar uma pele mais macia e rejuvenescida.</p>
+                            
+                            <p>Formulada com ingredientes naturais e ativos poderosos, esta pasta oferece resultados visíveis em poucas semanas de uso, reduzindo rugas, linhas de expressão e melhorando a textura da pele.</p>
+                            
+                            <h4>Principais benefícios:</h4>
+                            <ul>
+                                <li>Reduz rugas e linhas de expressão</li>
+                                <li>Proporciona pele mais macia e hidratada</li>
+                                <li>Efeito rejuvenescedor visível</li>
+                                <li>Fórmula com ingredientes naturais</li>
+                                <li>Tecnologia japonesa avançada</li>
+                                <li>Resultados em poucas semanas</li>
+                            </ul>
+
+                            <h4>Como usar:</h4>
+                            <ol>
+                                <li>Limpe bem o rosto</li>
+                                <li>Aplique uma pequena quantidade da pasta</li>
+                                <li>Massageie suavemente em movimentos circulares</li>
+                                <li>Deixe agir por 15-20 minutos</li>
+                                <li>Enxágue com água morna</li>
+                                <li>Use 2-3 vezes por semana</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div id="specifications" class="tab-content">
+                        <h3>Características principais</h3>
+                        <div class="specifications-list">
+                            <div class="spec-item">
+                                <span class="spec-label">Marca:</span>
+                                <span class="spec-value">Remove Japan</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Tipo de produto:</span>
+                                <span class="spec-value">Creme anti-idade</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Conteúdo:</span>
+                                <span class="spec-value">50g</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Origem:</span>
+                                <span class="spec-value">Japão</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Tipo de pele:</span>
+                                <span class="spec-value">Todos os tipos</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Validade:</span>
+                                <span class="spec-value">24 meses</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="reviews" class="tab-content">
+                        <div class="reviews-header">
+                            <h3>Opiniões sobre o produto</h3>
+                            <div class="overall-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span class="rating-value">4.5</span>
+                                <span class="rating-count">(2847)</span>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Maria Silva</span>
+                                        <span class="verified-badge">Compra verificada</span>
+                                    </div>
+                                    <span class="review-date">15 de dezembro de 2024</span>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <p class="review-comment">Produto incrível! Realmente funciona como prometido. Minha pele ficou muito mais macia e as rugas diminuíram visivelmente.</p>
+                                <button class="helpful-btn">👍 Útil (23)</button>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">João Santos</span>
+                                        <span class="verified-badge">Compra verificada</span>
+                                    </div>
+                                    <span class="review-date">12 de dezembro de 2024</span>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <p class="review-comment">Excelente qualidade! Já uso há 2 meses e os resultados são fantásticos. Recomendo!</p>
+                                <button class="helpful-btn">👍 Útil (18)</button>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Ana Costa</span>
+                                    </div>
+                                    <span class="review-date">10 de dezembro de 2024</span>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <p class="review-comment">Bom produto, mas demora um pouco para fazer efeito. No geral, estou satisfeita.</p>
+                                <button class="helpful-btn">👍 Útil (12)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="questions" class="tab-content">
+                        <h3>Perguntas e respostas</h3>
+                        <div class="no-questions">
+                            <p>Ainda não há perguntas sobre este produto.</p>
+                            <button class="ask-question-btn">Fazer uma pergunta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h3>Quem viu este produto também viu</h3>
+                
+                <div class="related-grid">
+                    <div class="related-item">
+                        <div class="related-image">
+                            <img src="https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Creme Anti-Idade Noturno">
+                            <div class="related-discount">-25%</div>
+                        </div>
+                        <h4 class="related-title">Creme Anti-Idade Noturno 50ml</h4>
+                        <div class="related-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="rating-count">(847)</span>
+                        </div>
+                        <div class="related-pricing">
+                            <div class="related-original-price">R$ 119,90</div>
+                            <div class="related-current-price">R$ 89,90</div>
+                            <div class="related-installment">em 12x R$ 7,49</div>
+                        </div>
+                        <div class="related-shipping">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            Frete grátis
+                        </div>
+                    </div>
+
+                    <div class="related-item">
+                        <div class="related-image">
+                            <img src="https://images.pexels.com/photos/5217849/pexels-photo-5217849.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Sérum Facial Vitamina C">
+                            <div class="related-discount">-22%</div>
+                        </div>
+                        <h4 class="related-title">Sérum Facial Vitamina C 30ml</h4>
+                        <div class="related-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="rating-count">(1254)</span>
+                        </div>
+                        <div class="related-pricing">
+                            <div class="related-original-price">R$ 159,90</div>
+                            <div class="related-current-price">R$ 124,90</div>
+                            <div class="related-installment">em 12x R$ 10,41</div>
+                        </div>
+                        <div class="related-shipping">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            Frete grátis
+                        </div>
+                    </div>
+
+                    <div class="related-item">
+                        <div class="related-image">
+                            <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Máscara Facial Hidratante">
+                            <div class="related-discount">-24%</div>
+                        </div>
+                        <h4 class="related-title">Máscara Facial Hidratante 100ml</h4>
+                        <div class="related-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="rating-count">(656)</span>
+                        </div>
+                        <div class="related-pricing">
+                            <div class="related-original-price">R$ 89,90</div>
+                            <div class="related-current-price">R$ 67,90</div>
+                            <div class="related-installment">em 12x R$ 5,66</div>
+                        </div>
+                        <div class="related-shipping">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            Frete grátis
+                        </div>
+                    </div>
+
+                    <div class="related-item">
+                        <div class="related-image">
+                            <img src="https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Tônico Facial Purificante">
+                            <div class="related-discount">-23%</div>
+                        </div>
+                        <h4 class="related-title">Tônico Facial Purificante 200ml</h4>
+                        <div class="related-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="rating-count">(387)</span>
+                        </div>
+                        <div class="related-pricing">
+                            <div class="related-original-price">R$ 59,90</div>
+                            <div class="related-current-price">R$ 45,90</div>
+                            <div class="related-installment">em 12x R$ 3,83</div>
+                        </div>
+                        <div class="related-shipping">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            Frete grátis
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre o MercadoLivre</h3>
+                    <ul>
+                        <li><a href="#">Investidor</a></li>
+                        <li><a href="#">Sustentabilidade</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Anuncie no ML</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Outros sites</h3>
+                    <ul>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Mercado Pago</a></li>
+                        <li><a href="#">Mercado Shops</a></li>
+                        <li><a href="#">Mercado Envios</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Ajuda</h3>
+                    <ul>
+                        <li><a href="#">Comprar</a></li>
+                        <li><a href="#">Vender</a></li>
+                        <li><a href="#">Resolução de problemas</a></li>
+                        <li><a href="#">Centro de segurança</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Redes sociais</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="app-downloads">
+                        <h4>Baixe o app</h4>
+                        <div class="download-links">
+                            <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/google-play.png" alt="Google Play" class="download-badge">
+                            <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/app-store.png" alt="App Store" class="download-badge">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 MercadoLivre. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Location Modal -->
+    <div id="location-modal" class="modal">
+        <div class="modal-content">
+            <button id="close-modal" class="modal-close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                
+                <h1 class="modal-title">Para onde devemos enviar?</h1>
+                
+                <div class="modal-form">
+                    <input type="text" id="location-input" placeholder="Digite sua cidade" class="location-input">
+                    <button id="submit-location" class="submit-btn">Enviar</button>
+                </div>
+
+                <div id="location-result" class="location-result"></div>
+                <div id="current-location-display" class="current-location-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/utils.js"></script>
+</body>
 </html>

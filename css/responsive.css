@@ -1,0 +1,298 @@
+/* Mobile First Responsive Design */
+
+/* Small screens (up to 640px) */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .main-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+    
+    .logo-section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .location-prefix {
+        display: none;
+    }
+    
+    .search-container {
+        margin: 0;
+        order: 3;
+    }
+    
+    .user-actions {
+        justify-content: space-around;
+        order: 2;
+    }
+    
+    .action-text {
+        display: none;
+    }
+    
+    .offers-link {
+        display: none;
+    }
+    
+    .categories-list {
+        gap: 0.5rem;
+    }
+    
+    .breadcrumb-list {
+        font-size: 0.625rem;
+    }
+    
+    .product-title {
+        font-size: 1.25rem;
+    }
+    
+    .current-price-main {
+        font-size: 1.5rem;
+    }
+    
+    .treatment-option {
+        padding: 0.75rem;
+    }
+    
+    .option-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .option-pricing {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .price-row {
+        justify-content: flex-start;
+    }
+    
+    .tabs-header {
+        overflow-x: auto;
+    }
+    
+    .tab-btn {
+        white-space: nowrap;
+        padding: 0.75rem 1rem;
+    }
+    
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .modal-content {
+        margin: 0.5rem;
+        padding: 1.5rem;
+    }
+    
+    .modal-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* Medium screens (641px to 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+    .location-prefix {
+        display: inline;
+    }
+    
+    .action-text {
+        display: none;
+    }
+    
+    .offers-link {
+        display: none;
+    }
+    
+    .product-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .location-prefix {
+        display: inline;
+    }
+    
+    .action-text {
+        display: inline;
+    }
+    
+    .offers-link {
+        display: flex;
+    }
+    
+    .product-section {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .related-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Extra large screens (1025px and up) */
+@media (min-width: 1025px) {
+    .location-prefix {
+        display: inline;
+    }
+    
+    .action-text {
+        display: inline;
+    }
+    
+    .offers-link {
+        display: flex;
+    }
+    
+    .product-section {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .related-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) {
+    .thumbnail:hover {
+        transform: scale(1.05);
+    }
+    
+    .treatment-option:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .related-item:hover {
+        transform: translateY(-2px);
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(52, 131, 250, 0.3);
+    }
+    
+    .btn-secondary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(52, 131, 250, 0.2);
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .breadcrumb,
+    .footer,
+    .modal {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 0;
+    }
+    
+    .product-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons,
+    .tabs-header {
+        display: none;
+    }
+    
+    .tab-content {
+        display: block !important;
+    }
+    
+    body {
+        background-color: white;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .treatment-option {
+        border-width: 3px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        border-width: 2px;
+    }
+    
+    .tab-btn.active {
+        border-bottom-width: 3px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .location-result.animate {
+        animation: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    /* Note: This is a basic dark mode implementation */
+    /* You may want to add more comprehensive dark mode styles */
+    
+    body {
+        background-color: #1a1a1a;
+        color: #e5e5e5;
+    }
+    
+    .header {
+        background-color: #2a2a2a;
+    }
+    
+    .breadcrumb,
+    .product-details,
+    .related-products,
+    .footer {
+        background-color: #2a2a2a;
+        border-color: #404040;
+    }
+    
+    .search-input,
+    .location-input {
+        background-color: #2a2a2a;
+        border-color: #404040;
+        color: #e5e5e5;
+    }
+    
+    .modal-content {
+        background-color: #2a2a2a;
+        color: #e5e5e5;
+    }
+}
