@@ -198,12 +198,12 @@ const ProductInfo = () => {
         <div className="flex items-start space-x-2">
           <Truck className="w-5 h-5 text-green-600 mt-0.5" />
           <div>
-            <div className="text-green-600 font-medium">Frete grátis</div>
-            <div className="text-sm text-gray-600">
-              Saiba os prazos de entrega e as formas de envio.
+            <div className="text-green-600 font-medium">Chegará grátis entre 22 e 25/jul</div>
+            <div className="text-sm text-gray-600 mt-1">
+              Chegará entre 17 e 18/jul
             </div>
-            <div className="text-sm text-[#3483FA] hover:underline cursor-pointer">
-              Calcular prazo de entrega
+            <div className="text-sm text-[#3483FA] hover:underline cursor-pointer mt-1">
+              Mais formas de entrega
             </div>
           </div>
         </div>
