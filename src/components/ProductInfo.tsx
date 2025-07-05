@@ -5,6 +5,43 @@ const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedTreatment, setSelectedTreatment] = useState('30-dias');
 
+  // Function to calculate delivery dates
+  const getDeliveryDates = () => {
+    const today = new Date();
+    
+    // Fast delivery: 3-4 days from today
+    const fastDeliveryStart = new Date(today);
+    fastDeliveryStart.setDate(today.getDate() + 3);
+    
+    const fastDeliveryEnd = new Date(today);
+    fastDeliveryEnd.setDate(today.getDate() + 4);
+    
+    // Free delivery: 7-8 days from today
+    const freeDeliveryStart = new Date(today);
+    freeDeliveryStart.setDate(today.getDate() + 7);
+    
+    const freeDeliveryEnd = new Date(today);
+    freeDeliveryEnd.setDate(today.getDate() + 8);
+    
+    // Format dates as DD/MMM
+    const formatDate = (date: Date) => {
+      const day = date.getDate();
+      const months = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 
+                     'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+      const month = months[date.getMonth()];
+      return `${day}/${month}`;
+    };
+    
+    return {
+      fastStart: formatDate(fastDeliveryStart),
+      fastEnd: formatDate(fastDeliveryEnd),
+      freeStart: formatDate(freeDeliveryStart),
+      freeEnd: formatDate(freeDeliveryEnd)
+    };
+  };
+
+  const deliveryDates = getDeliveryDates();
+
   const treatmentOptions = [
     { 
       id: '30-dias', 
@@ -198,9 +235,11 @@ const ProductInfo = () => {
         <div className="flex items-start space-x-2">
           <Truck className="w-5 h-5 text-green-600 mt-0.5" />
           <div>
-            <div className="text-green-600 font-medium">Chegará grátis entre 22 e 25/jul</div>
+            <div className="text-green-600 font-medium">
+              Chegará grátis entre {deliveryDates.freeStart} e {deliveryDates.freeEnd}
+            </div>
             <div className="text-sm text-gray-600 mt-1">
-              Chegará entre 17 e 18/jul
+              Chegará entre {deliveryDates.fastStart} e {deliveryDates.fastEnd}
             </div>
             <div className="text-sm text-[#3483FA] hover:underline cursor-pointer mt-1">
               Mais formas de entrega
