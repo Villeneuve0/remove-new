@@ -98,7 +98,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-[#FFF159] shadow-sm">
+      <header className="bg-[#FFE600] shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
           {/* Top bar */}
           <div className="flex items-center justify-end py-2 text-xs">
@@ -192,7 +192,7 @@ const Header = () => {
         </div>
 
         {/* Categories bar */}
-        <div className="bg-white border-t border-gray-200">
+        <div className="bg-[#FFE600] border-t border-yellow-300">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center space-x-4 sm:space-x-8 overflow-x-auto py-2">
               <a href="#" className="text-sm text-gray-600 hover:text-[#3483FA] whitespace-nowrap">Categorias</a>
