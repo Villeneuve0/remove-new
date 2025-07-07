@@ -115,14 +115,14 @@ const Header = () => {
             <div className="flex flex-col">
               <div className="mb-1">
                 <a 
-                  href="//www.mercadolivre.com.br" 
+                  href="#" 
                   className="nav-logo block"
                   title="Mercado Livre Brasil - Onde comprar e vender de Tudo"
                 >
                   {/* Mobile optimized logo */}
                   <div className="block sm:hidden">
                     <img 
-                      src="/imagens/logo-mercadolivre.png" 
+                      src="/image copy.png" 
                       alt="MercadoLivre" 
                       className="h-8 w-auto"
                     />
@@ -131,7 +131,7 @@ const Header = () => {
                   {/* Desktop logo */}
                   <div className="hidden sm:block">
                     <img 
-                      src="/imagens/logo-mercadolivre.png" 
+                      src="/image copy.png" 
                       alt="MercadoLivre" 
                       className="h-10 w-auto"
                     />
