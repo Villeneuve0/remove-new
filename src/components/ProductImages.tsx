@@ -5,7 +5,7 @@ const ProductImages = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://i.ibb.co/s9HtQcgZ/image.png",
     "https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=600",
     "https://images.pexels.com/photos/5217849/pexels-photo-5217849.jpeg?auto=compress&cs=tinysrgb&w=600",
     "https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=600"
