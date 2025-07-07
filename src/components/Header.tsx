@@ -122,7 +122,7 @@ const Header = () => {
                   {/* Mobile optimized logo */}
                   <div className="block sm:hidden">
                     <img 
-                      src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/logo_large_25years@2x.png" 
+                      src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/logo__large_plus.png" 
                       alt="MercadoLivre" 
                       className="h-8 w-auto"
                     />
@@ -131,7 +131,7 @@ const Header = () => {
                   {/* Desktop logo */}
                   <div className="hidden sm:block">
                     <img 
-                      src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/logo_large_25years@2x.png" 
+                      src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/logo__large_plus.png" 
                       alt="MercadoLivre" 
                       className="h-10 w-auto"
                     />
