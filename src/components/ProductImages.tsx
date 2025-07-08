@@ -6,7 +6,7 @@ const ProductImages = () => {
   
   const images = [
     "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/2d5d64fb-2c3d-4b27-89f3-ffa45513eff7.png",
-    "/imagens/produto-2.png",
+    "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/34a9d7b9-dedf-4101-b32f-ea445ad6a58b.png",
     "/imagens/produto-3.png",
     "/imagens/produto-4.png"
   ];
