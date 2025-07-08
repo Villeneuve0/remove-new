@@ -5,7 +5,7 @@ const ProductImages = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "/imagens/produto-1.png",
+    "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/2d5d64fb-2c3d-4b27-89f3-ffa45513eff7.png",
     "/imagens/produto-2.png",
     "/imagens/produto-3.png",
     "/imagens/produto-4.png"
