@@ -122,7 +122,7 @@ const Header = () => {
                   {/* Mobile optimized logo */}
                   <div className="block sm:hidden">
                     <img 
-                      src="/image copy.png" 
+                      src="https://mercado-clone-remover-shop.vercel.app/lovable-uploads/1453d82f-221a-4c18-b7b3-c32b45f24d2d.png" 
                       alt="MercadoLivre" 
                       className="h-8 w-auto"
                     />
@@ -131,7 +131,7 @@ const Header = () => {
                   {/* Desktop logo */}
                   <div className="hidden sm:block">
                     <img 
-                      src="/image copy.png" 
+                      src="https://mercado-clone-remover-shop.vercel.app/lovable-uploads/1453d82f-221a-4c18-b7b3-c32b45f24d2d.png" 
                       alt="MercadoLivre" 
                       className="h-10 w-auto"
                     />
