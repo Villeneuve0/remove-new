@@ -8,7 +8,7 @@ const ProductImages = () => {
     "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/2d5d64fb-2c3d-4b27-89f3-ffa45513eff7.png",
     "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/34a9d7b9-dedf-4101-b32f-ea445ad6a58b.png",
     "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/6d739019-f5a9-4212-a8ca-7881b78e28b2.png",
-    "/imagens/produto-4.png"
+    "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/c925ceb6-4e21-45ea-b888-3e4e92f7a893.png"
   ];
 
   const nextImage = () => {
