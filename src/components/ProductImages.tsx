@@ -5,7 +5,7 @@ const ProductImages = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/2d5d64fb-2c3d-4b27-89f3-ffa45513eff7.png",
+    "https://3765af4c-bbdd-4e6b-af67-cac31d76b152.lovableproject.com/lovable-uploads/7763e36c-3f2f-491f-b305-5d9f75837e86.png",
     "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/34a9d7b9-dedf-4101-b32f-ea445ad6a58b.png",
     "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/6d739019-f5a9-4212-a8ca-7881b78e28b2.png",
     "https://mercado-clone-remover-shop.vercel.app/lovable-uploads/c925ceb6-4e21-45ea-b888-3e4e92f7a893.png"
